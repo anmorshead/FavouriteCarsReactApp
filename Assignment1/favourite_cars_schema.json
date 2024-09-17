@@ -1,0 +1,296 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "favourite_cars",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "model",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "3b32119d-ad35-41a4-88e8-03e4e75a0749",
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "name": "manufacturer",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "efd3e034-afd3-450c-952b-a9b246c09a39",
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "name": "basePriceUSD",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {
+                        "name": false
+                    },
+                    "GUID": "5e60197c-ea8b-4beb-a12a-e6091bb30d93"
+                },
+                {
+                    "name": "performanceByGeneration",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "name": "generation",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "9a8abf0a-4be2-4a99-89be-17ce7ff38be6",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "productionYears",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "document",
+                                    "properties": [
+                                        {
+                                            "name": "start",
+                                            "hackoladeMeta": {},
+                                            "isActivated": true,
+                                            "type": "numeric",
+                                            "error": {},
+                                            "GUID": "b7b686da-56b3-45f5-9738-4e56667ac187"
+                                        },
+                                        {
+                                            "name": "end",
+                                            "hackoladeMeta": {},
+                                            "isActivated": true,
+                                            "type": "numeric",
+                                            "GUID": "93d29db2-ab04-4e2d-adb1-6c96cbff7750",
+                                            "error": {}
+                                        }
+                                    ],
+                                    "additionalProperties": false,
+                                    "error": {},
+                                    "GUID": "32dfb5b3-b473-430d-ac9a-95de1d630e2a"
+                                },
+                                {
+                                    "name": "horsepower",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "error": {},
+                                    "GUID": "a9031ede-8d43-44a3-97dd-185da6722f8c"
+                                },
+                                {
+                                    "name": "torque",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "error": {},
+                                    "GUID": "e36586af-0c86-4cac-a56e-60a39f53d19e"
+                                },
+                                {
+                                    "name": "engineType",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "54e4b182-1f1e-4d82-8c13-2ab5fa580296",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "transmissionOptions",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "array",
+                                    "properties": [
+                                        {
+                                            "hackoladeMeta": {},
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "GUID": "e87ea699-a3fe-4459-b580-09884ee6ff52",
+                                            "arrayItem": true
+                                        }
+                                    ],
+                                    "additionalItems": true,
+                                    "error": {},
+                                    "GUID": "4490d615-7932-4a0f-84a4-f3e50d522c27"
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "GUID": "62d176b2-c61f-4ecb-b3d2-b535c23ed963",
+                            "arrayItem": true
+                        }
+                    ],
+                    "additionalItems": true,
+                    "error": {},
+                    "GUID": "5f882bc8-b2fb-4ad4-a7e5-aa9e688a9d69"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "ac53db62-ec4b-41d9-ac3e-e3d11fe596d0"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc",
+            "bucketId": "adfc061c-532b-484f-adf5-b68aa28357d1"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "Cars",
+            "type": "bucket",
+            "collectionIds": [
+                "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "adfc061c-532b-484f-adf5-b68aa28357d1"
+        }
+    ],
+    "views": [],
+    "relationships": [],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "adfc061c-532b-484f-adf5-b68aa28357d1": "Cars",
+        "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc": "favourite_cars",
+        "3b32119d-ad35-41a4-88e8-03e4e75a0749": "model",
+        "efd3e034-afd3-450c-952b-a9b246c09a39": "manufacturer",
+        "5e60197c-ea8b-4beb-a12a-e6091bb30d93": "basePriceUSD",
+        "97d27bd9-ce44-4c58-bf71-8cb178f6d9dc": "start",
+        "fafd5641-4cba-4de9-ad2c-deb7c650199f": "end",
+        "5f882bc8-b2fb-4ad4-a7e5-aa9e688a9d69": "performanceByGeneration",
+        "68856e7c-a037-4ecb-8e8b-ce1416480906": "engineType",
+        "90e6e71b-b7ae-41da-a66d-e16a9634cf5c": "transmissionOptions",
+        "9a8abf0a-4be2-4a99-89be-17ce7ff38be6": "generation",
+        "32dfb5b3-b473-430d-ac9a-95de1d630e2a": "productionYears",
+        "b7b686da-56b3-45f5-9738-4e56667ac187": "start",
+        "93d29db2-ab04-4e2d-adb1-6c96cbff7750": "end",
+        "a9031ede-8d43-44a3-97dd-185da6722f8c": "horsepower",
+        "e36586af-0c86-4cac-a56e-60a39f53d19e": "torque",
+        "54e4b182-1f1e-4d82-8c13-2ab5fa580296": "engineType",
+        "4490d615-7932-4a0f-84a4-f3e50d522c27": "transmissionOptions"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "daa16dc4-68e0-4b5c-8786-e7f2104b2b88"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "78f66628-5803-4930-b466-41c89f915180"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "4c2fdab7-28e5-4ada-877e-4de38047a233"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-09-17T17:05:00.458Z",
+    "GUID": "a73bcfbd-a746-483e-9a98-2969e22cf96b",
+    "isLineageEnabled": false,
+    "lastModifTS": "2024-09-17T17:31:50.710Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.7.8"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc",
+                        "x": 1147,
+                        "y": 1054,
+                        "width": 278,
+                        "height": 174,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1107,
+                        "y": 1014,
+                        "GUID": "adfc061c-532b-484f-adf5-b68aa28357d1"
+                    }
+                ],
+                "collapsedNodes": [
+                    "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc5f882bc8-b2fb-4ad4-a7e5-aa9e688a9d6962d176b2-c61f-4ecb-b3d2-b535c23ed96332dfb5b3-b473-430d-ac9a-95de1d630e2a",
+                    "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc5f882bc8-b2fb-4ad4-a7e5-aa9e688a9d6962d176b2-c61f-4ecb-b3d2-b535c23ed9634490d615-7932-4a0f-84a4-f3e50d522c27"
+                ],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "e4b09d23-0a1c-4b3a-b5f3-598336dc48dc"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}

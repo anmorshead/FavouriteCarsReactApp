@@ -2,7 +2,7 @@
     {
         "model": "Golf R",
         "manufacturer": "Volkswagen",
-        "currentBasePriceUSD": 45000,
+        "basePriceUSD": 45000,
         "performanceByGeneration": [
           {
             "generation": "Mk6",
@@ -53,7 +53,7 @@
       {
         "model": "911 GT3 RS",
         "manufacturer": "Porsche",
-        "currentBasePriceUSD": 187500,
+        "basePriceUSD": 187500,
         "performanceByGeneration": [
           {
             "generation": "996",
@@ -115,7 +115,7 @@
       {
         "model": "R8",
         "manufacturer": "Audi",
-        "currentBasePriceUSD": 148000,
+        "basePriceUSD": 148000,
         "performanceByGeneration": [
           {
             "generation": "First Generation (Typ 42)",
@@ -155,7 +155,7 @@
       {
         "model": "Lancer Evolution",
         "manufacturer": "Mitsubishi",
-        "currentBasePriceUSD": 36000,  
+        "basePriceUSD": 36000,  
         "performanceByGeneration": [
           {
             "generation": "Evo I",
@@ -272,7 +272,7 @@
       {
         "model": "WRX STI",
         "manufacturer": "Subaru",
-        "currentBasePriceUSD": 42300, 
+        "basePriceUSD": 42300, 
         "performanceByGeneration": [
           {
             "generation": "GD",
