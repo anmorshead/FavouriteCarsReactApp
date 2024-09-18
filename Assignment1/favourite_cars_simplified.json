@@ -1,0 +1,88 @@
+[
+    {
+        "model": "Golf R",
+        "manufacturer": "Volkswagen",
+        "basePriceUSD": 45000,
+        "generation": "Mk7.5",
+        "performance":{
+            "horsepower": 292,
+            "torque": 280,
+            "engineType": "2.0L turbocharged I4",
+            "driveTrain": "AWD",
+            "transmissionOptions": ["6-speed manual", "7-speed dual-clutch automatic"]
+        },
+        "productionYears":{
+                "start": 2018,
+                "end": 2020
+            }
+    },
+    {
+        "model": "911 GT3 RS",
+        "manufacturer": "Porsche",
+        "basePriceUSD": 187500,
+        "generation": "991.2",
+        "performance":{
+           "horsepower": 520,
+            "torque": 346,
+            "engineType": "4.0L naturally aspirated flat-6",
+            "driveTrain": "RWD",
+            "transmissionOptions": ["7-speed dual-clutch automatic"]
+        },
+        "productionYears":{
+            "start": 2019,
+            "end": 2020
+        }
+    },
+    {
+        "model": "R8",
+        "manufacturer": "Audi",
+        "basePriceUSD": 148000,
+        "generation": "First Generation (Typ 42)",
+        "performance":{
+            "horsepower": 420,
+            "torque": 317,
+            "engineType": "4.2L V8",
+            "driveTrain": "AWD",
+            "transmissionOptions": ["6-speed manual", "6-speed automated manual"]
+        },
+        "productionYears":{
+            "start": 2008,
+            "end": 2015
+        }
+    },
+    {
+        "model": "Lancer Evolution",
+        "manufacturer": "Mitsubishi",
+        "basePriceUSD": 36000,  
+        "generation": "VIII",
+        "performance":{
+            "horsepower": 276,
+            "torque": 274,
+            "engineType": "2.0L turbocharged I4",
+            "driveTrain":"AWD",
+            "transmissionOptions": ["5-speed manual"]
+        },
+        "productionYears":{
+            "start": 2003,
+            "end": 2005
+        }
+    },
+    {
+        "model": "WRX STI",
+        "manufacturer": "Subaru",
+        "basePriceUSD": 42300, 
+        "generation": "GD",
+        "performance":{
+            "horsepower": 300,
+            "torque": 300,
+            "engineType": "2.5L turbocharged flat-4",
+            "driveTrain": "AWD",
+            "transmissionOptions": ["6-speed manual"]
+        },
+        "productionYears":{
+            "start": 2004,
+            "end": 2007
+        }
+    }
+        
+ ]
