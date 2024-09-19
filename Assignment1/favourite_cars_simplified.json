@@ -4,6 +4,7 @@
         "manufacturer": "Volkswagen",
         "basePriceUSD": 45000,
         "generation": "Mk7.5",
+        "image": "https://assets.autobuzz.my/wp-content/uploads/2018/06/08165003/2018-Volkswagen-Golf-R-Mk7.5-Review-3.jpg",
         "performance":{
             "horsepower": 292,
             "torque": 280,
@@ -21,6 +22,7 @@
         "manufacturer": "Porsche",
         "basePriceUSD": 187500,
         "generation": "991.2",
+        "image": "https://assets.porsche.com/dwaas-infohub/-/media/Project/DealerWebsites/SharedDealersWebsite/Master-Model-Page/911-GT3-RS/Media-Gallery/VM22_3760.jpg?rev=e37778c8910f4b11a30724690fae6b49&w=3520",
         "performance":{
            "horsepower": 520,
             "torque": 346,
@@ -38,6 +40,7 @@
         "manufacturer": "Audi",
         "basePriceUSD": 148000,
         "generation": "First Generation (Typ 42)",
+        "image": "https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2023/04/audi-r8-v10-cover.jpg?q=50&fit=crop&w=1100&h=618&dpr=1.5",
         "performance":{
             "horsepower": 420,
             "torque": 317,
@@ -55,6 +58,7 @@
         "manufacturer": "Mitsubishi",
         "basePriceUSD": 36000,  
         "generation": "VIII",
+        "image": "https://www.drifted.com/wp-content/uploads/2022/12/slammed-grey-evo-8.jpg",
         "performance":{
             "horsepower": 276,
             "torque": 274,
@@ -72,6 +76,7 @@
         "manufacturer": "Subaru",
         "basePriceUSD": 42300, 
         "generation": "GD",
+        "image": "https://collectingcars.imgix.net/008038/30-ww-12.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
         "performance":{
             "horsepower": 300,
             "torque": 300,
@@ -83,6 +88,80 @@
             "start": 2004,
             "end": 2007
         }
-    }
+    },
+    {
+        "model": "M3",
+        "manufacturer": "BMW",
+        "basePriceUSD": 47500,
+        "generation": "E46",
+        "image": "https://bimmerlife.com/wp-content/uploads/2021/03/BMW-M3-GTR-Road-version-1-1-e1616983657640.jpg",
+        "performance": {
+            "horsepower": 333,
+            "torque": 262,
+            "engineType": "3.2L inline-6",
+            "driveTrain": "RWD",
+            "transmissionOptions": ["6-speed manual", "6-speed SMG automatic"]
+        },
+        "productionYears": {
+            "start": 2000,
+            "end": 2006
+        }
+      },
+      {
+        "model": "Supra",
+        "manufacturer": "Toyota",
+        "basePriceUSD": 43000,
+        "generation": "A90",
+        "image": "https://www.hgkshop.com/cdn/shop/collections/J29_2808x.jpg?v=1611245886",
+        "performance": {
+          "horsepower": 382,
+            "torque": 368,
+            "engineType": "3.0L turbocharged inline-6",
+            "driveTrain": "RWD",
+            "transmissionOptions": ["8-speed automatic"]
+        },
+        "productionYears": {
+            "start": 2019,
+            "end": 2023
+        }
+      },
+      {
+        "model": "Focus RS",
+        "manufacturer": "Ford",
+        "basePriceUSD": 41000,
+        "generation": "Mk4",
+        "image": "https://www.car-revs-daily.com/wp-content/uploads/2015/04/Ford-Focus-RS-19.jpg",
+        "performance": {
+            "horsepower": 345,
+            "torque": 350,
+            "engineType": "2.3L turbocharged inline-4",
+            "driveTrain": "AWD",
+            "transmissionOptions": ["6-speed manual"]
+        },
+        "productionYears": {
+            "start": 2020,
+            "end": 2022
+            }
+      },
+      {
+        "model": "Z",
+        "manufacturer": "Nissan",
+        "basePriceUSD": 40000,
+        "generation": "Z34",
+        "image": "https://www.bagriders.com/media/mf_webp/jpg/media/wysiwyg/nissan-370z-z34-rwd-air-suspension.webp",
+        "performance": {
+            "horsepower": 400,
+            "torque": 350,
+            "engineType": "3.0L twin-turbocharged V6",
+            "driveTrain": "RWD",
+            "transmissionOptions": ["6-speed manual", "9-speed automatic"]
+        },
+        "productionYears": {
+            "start": 2023,
+            "end": 2024
+        }
+      }
+      
+       
         
  ]
