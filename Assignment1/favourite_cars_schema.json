@@ -1,0 +1,291 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "favourite_cars",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "model",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "4bc20487-b409-46bc-a21b-51743ba0290c",
+                    "error": {}
+                },
+                {
+                    "name": "manufacturer",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "bb978bec-b5f9-4473-8b50-272520caf8fb",
+                    "error": {}
+                },
+                {
+                    "name": "basePriceUSD",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "GUID": "e7937fa5-bad0-49c7-a909-018d807b5cc8"
+                },
+                {
+                    "name": "generation",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "7516bff3-d80d-48e6-95ba-ad2e521636c7",
+                    "error": {}
+                },
+                {
+                    "name": "image",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "7b31bb2b-4201-431d-8c77-935bc5e54d34",
+                    "error": {}
+                },
+                {
+                    "name": "performance",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "horsepower",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "error": {},
+                            "GUID": "25daaeb3-9735-45b6-aed3-330854152d3a"
+                        },
+                        {
+                            "name": "torque",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "error": {},
+                            "GUID": "4c192708-f5fa-4a3e-ac4b-71d20c95c1fb"
+                        },
+                        {
+                            "name": "engineType",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "1c2eb510-01f0-402a-ab2d-0ad7076dc1b1",
+                            "error": {}
+                        },
+                        {
+                            "name": "driveTrain",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "6a92629e-8b27-4aab-a2e2-29fef4bcdae5",
+                            "error": {}
+                        },
+                        {
+                            "name": "transmissionOptions",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "array",
+                            "properties": [
+                                {
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "a0a66855-0eec-4884-90ea-98138fb2e97c",
+                                    "arrayItem": true
+                                }
+                            ],
+                            "additionalItems": true,
+                            "error": {},
+                            "GUID": "7d74504e-663f-46e8-98f8-d3b0c0acab8c"
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "error": {},
+                    "GUID": "22db7b54-2166-4458-9830-efa21578a89b"
+                },
+                {
+                    "name": "productionYears",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "start",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "error": {},
+                            "GUID": "07b358e4-e8f1-4bd8-8fc7-daa7d99c9e18"
+                        },
+                        {
+                            "name": "end",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "error": {},
+                            "GUID": "2dafe095-5276-4180-992c-dc37f479d3df"
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "error": {},
+                    "GUID": "3260627d-647e-4963-8973-bd34972b974a"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "165e6c43-19df-4b92-b190-0896bc47a134"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "e1fee359-73e1-4351-9b83-cca896b4c0f6",
+            "bucketId": "43b02d44-3b03-404c-8d0b-7dc19892c37e"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "Cars",
+            "type": "bucket",
+            "collectionIds": [
+                "e1fee359-73e1-4351-9b83-cca896b4c0f6"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "43b02d44-3b03-404c-8d0b-7dc19892c37e"
+        }
+    ],
+    "views": [],
+    "relationships": [],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "43b02d44-3b03-404c-8d0b-7dc19892c37e": "Cars",
+        "e1fee359-73e1-4351-9b83-cca896b4c0f6": "favourite_cars",
+        "4bc20487-b409-46bc-a21b-51743ba0290c": "model",
+        "bb978bec-b5f9-4473-8b50-272520caf8fb": "manufacturer",
+        "e7937fa5-bad0-49c7-a909-018d807b5cc8": "basePriceUSD",
+        "7516bff3-d80d-48e6-95ba-ad2e521636c7": "generation",
+        "7b31bb2b-4201-431d-8c77-935bc5e54d34": "image",
+        "22db7b54-2166-4458-9830-efa21578a89b": "performance",
+        "25daaeb3-9735-45b6-aed3-330854152d3a": "horsepower",
+        "4c192708-f5fa-4a3e-ac4b-71d20c95c1fb": "torque",
+        "1c2eb510-01f0-402a-ab2d-0ad7076dc1b1": "engineType",
+        "6a92629e-8b27-4aab-a2e2-29fef4bcdae5": "driveTrain",
+        "7d74504e-663f-46e8-98f8-d3b0c0acab8c": "transmissionOptions",
+        "3260627d-647e-4963-8973-bd34972b974a": "productionYears",
+        "07b358e4-e8f1-4bd8-8fc7-daa7d99c9e18": "start",
+        "2dafe095-5276-4180-992c-dc37f479d3df": "end"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "dbab7f64-0811-4f39-956c-0dfb06b136cc"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "663785a7-a7f5-441b-846b-dc9c0d3cab80"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "1e8860ab-a551-4578-ab30-9e070366b688"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-09-19T22:19:25.303Z",
+    "GUID": "7a9fddca-f43d-45f8-af35-b5b336d4f873",
+    "isLineageEnabled": false,
+    "lastModifTS": "2024-09-19T22:24:48.354Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.7.8"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "e1fee359-73e1-4351-9b83-cca896b4c0f6",
+                        "x": 1080,
+                        "y": 1080,
+                        "width": 213,
+                        "height": 179,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1040,
+                        "y": 1040,
+                        "GUID": "43b02d44-3b03-404c-8d0b-7dc19892c37e"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "e1fee359-73e1-4351-9b83-cca896b4c0f6"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
