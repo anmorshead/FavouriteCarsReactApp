@@ -2,7 +2,7 @@
   "name": "my-fullstack-app-anmorshead",
   "version": "0.0.0",
   "private": true,
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "nodemon ./bin/www"
   },
@@ -12,6 +12,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "mongoose": "^8.7.2",
     "morgan": "~1.9.1"
   }
 }

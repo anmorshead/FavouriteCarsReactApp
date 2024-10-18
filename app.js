@@ -12,6 +12,16 @@ import cookieParser from 'cookie-parser';
 // var logger = require('morgan');
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
+import mongoose from 'mongoose';
+
+//connect to our mongoDB (async action-returns promise)
+mongoose.connect('mongodb://localhost:27017/Cars')
+  .then(() => {
+    console.log("Database connected successfully")
+  })
+  .catch(err => {
+    console.log(`Error: Unable to connect ${err.message}`)
+  })
 
 //routers
 // var indexRouter = require('./routes/index.js');
@@ -20,6 +30,8 @@ import indexRouter from './routes/index.js'
 import usersRouter from './routes/users.js'
 //new router
 import carsRouter from './routes/cars.js'
+
+
 
 //instance of express
 var app = express();

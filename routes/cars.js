@@ -1,4 +1,5 @@
 import express from 'express'
+import Car from '../models/car.js'
 //creates new room in our building to handle cars endpoints
 const router = express.Router();
 
@@ -9,6 +10,11 @@ const router = express.Router();
 router.get('/', (req, res) => {
     // res.json(cars)
     res.send('GET ALL CARS')
+    //exec executes promise
+    Car.find()
+        .exec()
+        .then(data => console.log(data))
+        .catch()
 })
 //GET car BY ID
 router.get('/:id', (req, res) => {
