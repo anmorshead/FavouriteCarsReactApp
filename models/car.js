@@ -3,8 +3,14 @@ const {Schema, model} = mongoose;
 
 //define cars schema
 const carSchema = new Schema({
-    model: String,
-    manufacturer: String,
+    model: {
+        type: String,
+        required: true
+    },
+    manufacturer: {
+        type: String,
+        required: true
+    },
     basePriceUSD: Number,
     generation: String,
     image: String,
