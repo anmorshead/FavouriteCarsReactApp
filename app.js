@@ -13,9 +13,13 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+//load all custom env variables
+dotenv.config()
 
 //connect to our mongoDB (async action-returns promise)
-mongoose.connect('mongodb://localhost:27017/Cars')
+mongoose.connect(process.env.MONGO_DB)//should be variable (env)
   .then(() => {
     console.log("Database connected successfully")
   })

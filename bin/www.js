@@ -7,7 +7,7 @@
 import app from '../app.js'
 // var debug = require('debug')('my-fullstack-app-anmorshead:server');
 import dbg from 'debug'
-const debug = dbg('mmy-fullstack-app-anmorshead:server')
+const debug = dbg('my-fullstack-app-anmorshead:server')
 
 // var http = require('http');
 import http from 'http';
