@@ -1,5 +1,5 @@
 import express from 'express'
-import Car from '../models/car.js'
+import Car from '../../models/car.js'
 //creates new room in our building to handle cars endpoints
 const router = express.Router();
 

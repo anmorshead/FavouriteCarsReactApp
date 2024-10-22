@@ -28,13 +28,8 @@ mongoose.connect(process.env.MONGO_DB)//should be variable (env)
   })
 
 //routers
-// var indexRouter = require('./routes/index.js');
 import indexRouter from './routes/index.js'
-// var usersRouter = require('./routes/users.js');
-import usersRouter from './routes/users.js'
-//new router
-import carsRouter from './routes/cars.js'
-
+import apiRouter from './routes/api/index.js'
 
 
 //instance of express
@@ -56,8 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //use a couple of routers
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/cars', carsRouter);
+app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
