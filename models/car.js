@@ -15,16 +15,37 @@ const carSchema = new Schema({
     generation: String,
     image: String,
     performance: {
-        horsepower: Number,
+        horsepower: {
+            type: Number,
+            min: [10, 'Is this an actual horse?'],
+            max:[5000, 'Impossible']
+        },
         torque: Number,
         engineType: String,
-        driveTrain: String,
+        driveTrain: {
+            type: String,
+            enum: ['AWD', 'RWD', 'FWD']
+        },
         transmissionOptions: [String]
 
     },
     productionYears:{
-        start: Number,
-        end: Number
+        start: {
+            type: Number,
+            min:[1900, 'That car is way too old'],
+            max:[new Date().getFullYear(), "They haven't even made that yet"]
+        },
+        end: {
+            type: Number,
+            min:[1900, 'That car is way too old'],
+            max:[new Date().getFullYear(), "They haven't even made that yet"],
+            validate: {
+                validator: function(value) {
+                    return value >= this.start;
+                },
+                message: 'End year ({VALUE}) should be greater than or equal to the start year'
+            }
+        }
     }
 }, {collection: 'favourite_cars'})
 

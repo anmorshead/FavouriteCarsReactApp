@@ -1,15 +1,15 @@
-// var express = require('express');
 import express from "express";
-var router = express.Router();
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('respond with a resource');
+//register endpoint
+router.post('/register', async (req, res) => {
+  res.send("Register")
 });
 
-router.get('/abc', function(req, res){
-  res.send('ABC')
-})
+//login endpoint
+router.post('/login', async (req, res) => {
+  res.send("login")
+});
 
 // module.exports = router;
 export default router

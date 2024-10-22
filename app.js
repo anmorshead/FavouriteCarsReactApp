@@ -1,15 +1,11 @@
 //our application configuration files
 
 //import application configuration files
-// var createError = require('http-errors');
+
 import createError from 'http-errors';
-// var express = require('express');
 import express from 'express';
-// var path = require('path');
 import path from 'path'
-// var cookieParser = require('cookie-parser');
 import cookieParser from 'cookie-parser';
-// var logger = require('morgan');
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
