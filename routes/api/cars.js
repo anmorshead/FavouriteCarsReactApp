@@ -7,11 +7,7 @@ const router = express.Router();
 
 //GET ALL CARS
 router.get('/', async (req, res) => {
-    //old way
-    // Car.find()
-    //     .exec()
-    //     .then(data => res.send(data))//all good
-    //     .catch(err => res.statusCode(500).send())//server problem
+ 
     try{
         const data = await Car.find().exec(); //can only use await if it returns a promise(exec)
         res.json(data)
