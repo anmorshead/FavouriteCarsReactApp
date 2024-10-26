@@ -1,17 +1,20 @@
 import mongoose from "mongoose";
+import { passwordStrength } from "check-password-strength";
+
 const {Schema, model} = mongoose;
 
 //define cars schema
 const userSchema = new Schema({
+
     firstName: {
         type: String,
         required: true,
-        max:100
+        maxlength:100
     },
     lastName: {
         type: String,
         required: true,
-        max:100
+        maxlength:100
     },
    email: {
         type: String,
@@ -25,9 +28,18 @@ const userSchema = new Schema({
         }
    },
    password: {
+        type:String,
         required: true,
+        maxlength:255,
+        validate: {
+            validator: v => {
+            const result = passwordStrength(v);
+
+            return (result.value ==="Medium" || result.value ==="Strong")
+            }, message: "Password too weak. Must be at least 8 characters and contain uppercase, lowercase, number, and symbol"
+        }
    }
-})
+}, {collection: 'users'});
 
 
 export default model('User', userSchema)
