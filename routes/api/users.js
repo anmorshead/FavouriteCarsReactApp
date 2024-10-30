@@ -38,16 +38,17 @@ try {
   //find user by email
   const user = await User.findOne({email}).exec();
   if (!user) {
-    return res.status(400).send("Invalid email or password.");
+    return res.status(401).send("Invalid email or password.");
   }
   //compare password entered with bcrypt password stored
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    return res.status(400).send("Invalid email or password.");
+    return res.status(401).send("Invalid email or password.");
   }
   //if login is successful, generate token
   const token = jwt.sign({ userId: user._id}, secret)
   res.setHeader('x-auth-token', token);
+  console.log(token)
 
   //if successful return token in response
   res.status(200).json({ message: "Login successful", token });

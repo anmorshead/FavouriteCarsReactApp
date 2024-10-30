@@ -1,5 +1,8 @@
 import express from 'express'
 import Car from '../../models/car.js'
+//middleware
+import checkToken from '../../middleware/checkToken.js';
+
 //creates new room in our building to handle cars endpoints
 const router = express.Router();
 
@@ -31,7 +34,7 @@ router.get('/:id', async (req, res) => {
 })
 
 //CREATE CAR -- NEEDS VALIDATION
-router.post('/', async (req, res) => {
+router.post('/', checkToken, async (req, res) => {
 
     try{
         const newCar = new Car(req.body)
@@ -47,7 +50,7 @@ router.post('/', async (req, res) => {
 })
 
 //UPDATE CAR -- NEEDS VALIDATION
-router.put('/:id', async (req, res) => {
+router.put('/:id', checkToken, async (req, res) => {
 
     try{
         const updatedCar = await Car.findByIdAndUpdate(
@@ -60,22 +63,24 @@ router.put('/:id', async (req, res) => {
         }
         res.status(200).send(updatedCar) //update successful, return car
     }catch(err){
+        console.log(err)
         res.status(500).send() 
     }
 })
 
 //DELETE CAR BY ID 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', checkToken, async (req, res) => {
 
     try{
         const deletedCar = await Car.findByIdAndDelete(req.params.id).exec()
         console.log(deletedCar)
-        res.send()
+        
         if(!deletedCar){
             return res.status(404).send() //id not found
         }
         res.status(204).send() //delete successful
     } catch(err){
+        console.log(err)
         res.status(500).send()
     }
 

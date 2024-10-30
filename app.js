@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+
 //load all custom env variables
 dotenv.config()
 
@@ -44,6 +45,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 //use a couple of routers
 app.use('/', indexRouter);
