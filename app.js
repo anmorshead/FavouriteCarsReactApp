@@ -10,6 +10,7 @@ import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors'
 
 
 //load all custom env variables
@@ -45,6 +46,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 
 //use a couple of routers

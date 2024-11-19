@@ -14,8 +14,12 @@ import http from 'http';
 /**
  * Get port from environment and store in Express.
  */
+if (!process.env.PORT) {
+  console.error('Error: PORT is not specified in the .env file');
+  process.exit(1); // Exit if PORT is not set
+}
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = process.env.PORT;
 app.set('port', port);
 
 /**
