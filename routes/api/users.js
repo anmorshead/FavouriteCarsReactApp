@@ -8,6 +8,8 @@ import bcrypt from 'bcrypt'
 //register endpoint
 router.post('/register', async (req, res) => {
 
+  const secret = process.env.JWT_SECRET; 
+
   try{
     const newUser = new User(req.body);
     //validate our req.body
@@ -19,6 +21,12 @@ router.post('/register', async (req, res) => {
     await newUser.save()
     
     console.log("New user registered successfully");
+   
+    //if registewr is successful, generate token
+    const token = jwt.sign({ userId: newUser._id}, secret)
+    res.setHeader('x-auth-token', token);
+    res.setHeader('Access-Control-Expose-Headers', 'x-auth-token')
+    //console.log(token)
     res.status(201).json({ _id: newUser._id, email: newUser.email });
     
   }catch(err){
@@ -48,6 +56,7 @@ try {
   //if login is successful, generate token
   const token = jwt.sign({ userId: user._id}, secret)
   res.setHeader('x-auth-token', token);
+  res.setHeader('Access-Control-Expose-Headers', 'x-auth-token')
   console.log(token)
 
   //if successful return token in response

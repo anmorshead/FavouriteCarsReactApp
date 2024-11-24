@@ -3,13 +3,13 @@ import '../css/signin.css';
 import { useForm } from 'react-hook-form'
 import axios from 'axios';
 
-const SignIn = props => {
+const Register = props => {
     const {register, formState:{errors}, handleSubmit} = useForm();
 
     function receiveFormData(collectedData){
         console.log(collectedData)
         //send form data to login endpoint
-        axios.post("http://localhost:3002/api/users/login", collectedData)
+        axios.post("http://localhost:3002/api/users/register", collectedData)
         .then(response => console.log(response))
 
 
@@ -18,7 +18,11 @@ const SignIn = props => {
 
     return ( 
         <form className="form-signin" onSubmit={handleSubmit(receiveFormData)}>
-            <h1 className="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+            <h1 className="h3 mb-3 font-weight-normal text-center">Please Register an Account with us</h1>
+            <label htmlFor="firstName" className="sr-only">First Name</label>
+            <input {...register("firstName") } id="firstName" className="form-control" placeholder="First Name" autoFocus />
+            <label htmlFor="lastName" className="sr-only">Last Name</label>
+            <input {...register("lastName") } id="lastName" className="form-control" placeholder="Last Name"/>
             <label htmlFor="inputEmail" className="sr-only">Email address</label>
             <input {...register("email") } id="inputEmail" className="form-control" placeholder="Email address" autoFocus />
             <label htmlFor="inputPassword" className="sr-only">Password</label>
@@ -28,4 +32,4 @@ const SignIn = props => {
      );
 }
  
-export default SignIn;
+export default Register;
