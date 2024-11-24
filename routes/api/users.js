@@ -19,15 +19,13 @@ router.post('/register', async (req, res) => {
     newUser.password = hash
     //save new user with encrypted password
     await newUser.save()
-    
-    console.log("New user registered successfully");
    
     //if registewr is successful, generate token
     const token = jwt.sign({ userId: newUser._id}, secret)
     res.setHeader('x-auth-token', token);
     res.setHeader('Access-Control-Expose-Headers', 'x-auth-token')
-    //console.log(token)
-    res.status(201).json({ _id: newUser._id, email: newUser.email });
+    console.log(token)
+    res.status(201).json({ _id: newUser._id, email: newUser.email, firstName: newUser.firstName, lastName: newUser.lastName, token });
     
   }catch(err){
     console.log(err)

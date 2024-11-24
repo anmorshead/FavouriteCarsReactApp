@@ -14,9 +14,9 @@ const SignIn = props => {
         axios.post("http://localhost:3002/api/users/login", collectedData)
             .then((response) => {
                 if (response.status === 200) {
-                    const token = response.headers['x-auth-token']; // Correctly access the header
-                    localStorage.setItem("token", token); // Correct spelling
-                    navigate('/'); // Redirect to home page
+                    const token = response.headers['x-auth-token']; 
+                    localStorage.setItem("token", token); 
+                    navigate('/'); // redirect to home
                 }
             })
 
