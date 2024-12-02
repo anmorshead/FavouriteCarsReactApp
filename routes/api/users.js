@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
     //save new user with encrypted password
     await newUser.save()
    
-    //if registewr is successful, generate token
+    //if register is successful, generate token
     const token = jwt.sign({ userId: newUser._id}, secret)
     res.setHeader('x-auth-token', token);
     res.setHeader('Access-Control-Expose-Headers', 'x-auth-token')
@@ -53,19 +53,24 @@ try {
   }
   //if login is successful, generate token
   const token = jwt.sign({ userId: user._id}, secret)
-  res.setHeader('x-auth-token', token);
-  res.setHeader('Access-Control-Expose-Headers', 'x-auth-token')
-  console.log(token)
 
-  //if successful return token in response
-  res.status(200).json({ message: "Login successful", token });
+  //send the token in a httpOnly cookie for secure storage **********(use for register too)
+  res.cookie("jwt", token, {httpOnly: true, path: '/'})
+
+  //if successful, send
+  res.send()
 
 } catch (err) {
   console.log(err);
   res.status(500).send("Server error");
 }
-  
 });
+
+//logout endpoint
+router.post('/logout', (req, res) => {
+  res.clearCookie('jwt')
+  res.send(204).send()
+})
 
 // module.exports = router;
 export default router

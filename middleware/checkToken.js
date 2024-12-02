@@ -3,6 +3,8 @@ import jwt from 'jsonwebtoken'
 export default (req, res, next) => {
     //intercept the request
   
+    //CHECK TO SEE IF COOKIE CALLED JWT, IS IT VALID?
+
     //check request headers for header called x-auth-token
       console.log("PASSING THROUGH CHECK TOKEN CHECKER")
   
