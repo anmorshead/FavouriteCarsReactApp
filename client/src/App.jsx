@@ -5,6 +5,7 @@ import Register from './components/Register';
 import SignIn from './components/SignIn';
 import Footer from './components/Footer';
 import Dummy from './components/Dummy';
+import CreateForm from './components/CreateForm';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -20,7 +21,7 @@ const App = () => {
           <Route path="/register" element={<Register/>}/>
           <Route path="/signin" element={<SignIn/>}/>
           <Route element={<ProtectedRoutes/>}>
-            <Route path="/dummy" element={<Dummy/>}/>
+            <Route path="/create" element={<CreateForm/>}/>
           </Route>
         </Routes>
       </div>

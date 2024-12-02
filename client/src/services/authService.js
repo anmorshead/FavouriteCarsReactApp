@@ -71,6 +71,28 @@ class authService {
         //check for existance of value in sessionStorage
         return !!sessionStorage.getItem('isLoggedIn')
     }
+
+    // async create(collectedData, callback){
+    //     try {
+    //         const response = await axios.post("http://localhost:3002/api/cars", collectedData, {withCredentials: true})
+    //         switch(response.status){
+    //             case 201:{
+    //                 callback(true)
+    //                 break;
+    //             }
+    //             case 422:{
+    //                 callback(false)
+    //                 break;
+    //             }
+    //             case 500:{
+    //                 callback(false)
+    //                 break;
+    //             }
+    //         }
+    //     } catch (err) {
+    //         console.log('invalid login')
+    //     }
+    // }
 }
 
 export default new authService()

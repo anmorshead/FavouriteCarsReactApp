@@ -9,9 +9,10 @@ export default (req, res, next) => {
       console.log("PASSING THROUGH CHECK TOKEN CHECKER")
   
     //no header? or value isnt token redirect with a 401
-    const token = req.header('x-auth-token')
+    //const token = req.header('x-auth-token')
+    const token = req.cookies.jwt; // Extract token from the 'jwt' cookie
     const secret = process.env.JWT_SECRET;
-    console.log("Token received:", token); // Logs the token for debugging
+    console.log("Token received form cookie:", token); // Logs the token for debugging
      
 
       if(!token){

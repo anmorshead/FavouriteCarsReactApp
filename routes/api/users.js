@@ -22,10 +22,13 @@ router.post('/register', async (req, res) => {
    
     //if register is successful, generate token
     const token = jwt.sign({ userId: newUser._id}, secret)
+
+    //send the token in a httpOnly cookie for secure storage
+    res.cookie("jwt", token, {httpOnly: true, path: '/'})
     res.setHeader('x-auth-token', token);
     res.setHeader('Access-Control-Expose-Headers', 'x-auth-token')
-    console.log(token)
-    res.status(201).json({ _id: newUser._id, email: newUser.email, firstName: newUser.firstName, lastName: newUser.lastName, token });
+    //console.log(token)
+    res.send(201)
     
   }catch(err){
     console.log(err)
@@ -58,7 +61,7 @@ try {
   res.cookie("jwt", token, {httpOnly: true, path: '/'})
 
   //if successful, send
-  res.send()
+  res.send(200)
 
 } catch (err) {
   console.log(err);
