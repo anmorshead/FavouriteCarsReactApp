@@ -12,7 +12,7 @@ const SignIn = props => {
       authService.signIn(collectedData, (success) => {
         if(success){
             sessionStorage.setItem('isLoggedIn', 'true')
-            navigate('/')
+            navigate('/create')
         }else{
             console.log("unsuccessful login")
         }

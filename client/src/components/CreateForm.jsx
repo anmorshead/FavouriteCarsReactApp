@@ -33,6 +33,9 @@ export default function CreateForm(){
             <label htmlFor="image" className="sr-only">Image</label>
             <input {...register("image") } id="image" className="form-control" placeholder="Link to Image" autoFocus />
             <h5 className="m-3 font-weight-normal text-center">Extra Info if you know it...</h5>
+
+            <label htmlFor="generation" className="sr-only">Generation</label>
+            <input {...register("generation") } id="generation" className="form-control" placeholder="Generation"/>
             <label htmlFor="performance.horsepower" className="sr-only">Horsepower</label>
             <input {...register("performance.horsepower") }id="performance.horsepower" className="form-control" placeholder="Horsepower"/>
             <label htmlFor="performance.torque" className="sr-only">Torque</label>
@@ -41,7 +44,7 @@ export default function CreateForm(){
             <input {...register("performance.engineType") }id="performance.engineType" className="form-control" placeholder="Engine"/>
 
 
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Create Car</button>
+            <button className="btn btn-lg btn-primary btn-block mt-3" type="submit">Create Car</button>
         </form>
     )
 
