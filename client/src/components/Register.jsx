@@ -1,29 +1,23 @@
 import React from 'react';
 import '../css/signin.css';
 import { useForm } from 'react-hook-form'
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
+import authService from '../services/authService';
 
 const Register = props => {
     const {register, formState:{errors}, handleSubmit} = useForm();
     const navigate = useNavigate();
 
     function receiveFormData(collectedData){
-        console.log(collectedData)
-        //send form data to register endpoint
-        axios.post("http://localhost:3002/api/users/register", collectedData)
-            .then((response) => {
-                if (response.status === 201) {
-                    console.log(response);
-                    const token = response.headers['x-auth-token']; 
-                    localStorage.setItem("token", token); 
-                    navigate('/'); // redirect to home 
-                }
-            })
-            .catch((error) => {
-                console.error("Registration Error:", error.response || error);
-            });
-    }
+        authService.register(collectedData, (success) => {
+            if(success){
+                sessionStorage.setItem('isLoggedIn', 'true')
+                navigate('/')
+            }else{
+                console.log("unsuccessful login")
+            }
+          })
+        }
 
 
     return ( 
