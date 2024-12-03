@@ -8,6 +8,7 @@ import Logout from './components/Logout';
 import CreateForm from './components/CreateForm';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import EditForm from './components/EditForm';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/create" element={<CreateForm/>}/>
           </Route>
           <Route path="/logout" element={<Logout/>}/>
+          <Route path="/edit" element={<EditForm />} />
         </Routes>
       </div>
       <Footer />
