@@ -25,7 +25,9 @@ const App = () => {
             <Route path="/create" element={<CreateForm/>}/>
           </Route>
           <Route path="/logout" element={<Logout/>}/>
-          <Route path="/edit" element={<EditForm />} />
+          <Route element={<ProtectedRoutes/>}>
+            <Route path="/edit" element={<EditForm />}/>
+          </Route>  
         </Routes>
       </div>
       <Footer />
