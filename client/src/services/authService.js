@@ -9,6 +9,7 @@ class authService {
             switch(response.status){
                 case 201:{
                     sessionStorage.setItem("isloggedIn", "true")
+                    sessionStorage.setItem("user", collectedData.email)
                     callback(true)
                     break;
                 }
@@ -34,6 +35,7 @@ class authService {
             switch(response.status){
                 case 200:{
                     sessionStorage.setItem("isloggedIn", "true")
+                    sessionStorage.setItem("user", collectedData.email)
                     callback(true)
                     break;
                 }
@@ -58,6 +60,7 @@ class authService {
             const response = await axios.post("http://localhost:3002/api/users/logout")
             if(response.status === 204){
                 sessionStorage.removeItem("isLoggedIn")
+                sessionStorage.removeItem("user")
                 callback(true)
             } else {
                 callback(false)
@@ -72,27 +75,11 @@ class authService {
         return !!sessionStorage.getItem('isLoggedIn')
     }
 
-    // async create(collectedData, callback){
-    //     try {
-    //         const response = await axios.post("http://localhost:3002/api/cars", collectedData, {withCredentials: true})
-    //         switch(response.status){
-    //             case 201:{
-    //                 callback(true)
-    //                 break;
-    //             }
-    //             case 422:{
-    //                 callback(false)
-    //                 break;
-    //             }
-    //             case 500:{
-    //                 callback(false)
-    //                 break;
-    //             }
-    //         }
-    //     } catch (err) {
-    //         console.log('invalid login')
-    //     }
-    // }
+    getSignedInUser(){
+        return sessionStorage.getItem('user')
+    }
+
+
 }
 
 export default new authService()

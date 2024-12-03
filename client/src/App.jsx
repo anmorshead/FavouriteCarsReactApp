@@ -4,7 +4,7 @@ import Main from './components/Main';
 import Register from './components/Register';
 import SignIn from './components/SignIn';
 import Footer from './components/Footer';
-import Dummy from './components/Dummy';
+import Logout from './components/Logout';
 import CreateForm from './components/CreateForm';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -23,6 +23,7 @@ const App = () => {
           <Route element={<ProtectedRoutes/>}>
             <Route path="/create" element={<CreateForm/>}/>
           </Route>
+          <Route path="/logout" element={<Logout/>}/>
         </Routes>
       </div>
       <Footer />

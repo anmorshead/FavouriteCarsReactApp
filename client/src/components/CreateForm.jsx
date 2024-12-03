@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form'
 import React from 'react';
 import '../css/signin.css';
 import { useNavigate } from 'react-router-dom'
-//import authService from '../services/authService';
 import axios from 'axios';
 
 export default function CreateForm(){

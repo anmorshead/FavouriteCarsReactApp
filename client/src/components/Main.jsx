@@ -23,11 +23,6 @@ const Main = () => {
         <section className="jumbotron">
           <div className="container">
             <div className="input-group">
-              <button 
-                className="btn btn-primary btn-lg" 
-                type="button" 
-                onClick={() => navigate('/create')} // Navigate to the 'create' route
-                >Add a New Car</button>
               </div>
             </div>
         </section>
