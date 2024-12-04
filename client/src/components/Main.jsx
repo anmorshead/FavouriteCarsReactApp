@@ -3,11 +3,10 @@ import '../css/main.css'
 import 'font-awesome/css/font-awesome.min.css';
 import axios from 'axios';
 import Card from './Card';
-import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
   const [cars, setCars] = useState([])
-  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');//needs to be empty string so all cars come back when search is empty
 
   useEffect(() => {
     //fetch data from api
@@ -28,13 +27,29 @@ const Main = () => {
         });
   }
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value.toLowerCase()); //deal with cases
+  };
+
+  // Filter cars based on search query
+  const filteredCars = cars.filter((car) => {
+    const searchValue = searchTerm.toLowerCase();
+    return (
+      car.model.toLowerCase().includes(searchValue) ||
+      car.manufacturer.toLowerCase().includes(searchValue)
+    );
+  });
 
     return ( 
       <div>
         <section className="jumbotron">
           <div className="container">
             <div className="input-group">
-            <input type="text" className="form-control" placeholder="Search this site" />
+            <input type="text" 
+                  className="form-control" 
+                  placeholder="Search cars by model or manufacturer" 
+                  value={searchTerm}
+                  onChange={handleSearch}/>
               <div className="input-group-append">
                 <button className="btn btn-secondary" type="button">
                   <i className="fa fa-search"></i>
@@ -47,7 +62,7 @@ const Main = () => {
         <div className="album py-5 bg-light">
           <div className="container">
             <div className="row">
-              {cars.map(car => {
+              {filteredCars.map(car => {
                 return <Card 
                 key={car._id} 
                 _id={car._id} 
