@@ -17,6 +17,17 @@ const Main = () => {
       })
   },[])
 
+  function deleteCar(carId){
+      axios.delete(`http://localhost:3002/api/cars/${carId}`, {withCredentials: true})
+        .then(() => {
+          //filter out the cars that arent the one to be deleted and set them in state
+          setCars((prevCars) => prevCars.filter(car => car._id !== carId));
+        })
+        .catch((error) => {
+          console.error('Error deleting car:', error);
+        });
+  }
+
 
     return ( 
       <div>
@@ -47,6 +58,7 @@ const Main = () => {
                 horsepower={car.performance.horsepower} 
                 engine={car.performance.engineType}
                 torque={car.performance.torque}
+                onDelete={deleteCar}  //pass deleteCar function as a prop to card
                 />
               })}
             </div>
