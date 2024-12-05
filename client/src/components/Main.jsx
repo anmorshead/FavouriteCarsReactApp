@@ -10,14 +10,14 @@ const Main = () => {
 
   useEffect(() => {
     //fetch data from api
-    axios.get(`http://localhost:3002/api/cars`)
+    axios.get(`${import.meta.env.VITE_API_URL}/cars`)
       .then(response => {
       setCars(response.data)
       })
   },[])
 
   function deleteCar(carId){
-      axios.delete(`http://localhost:3002/api/cars/${carId}`, {withCredentials: true})
+      axios.delete(`${import.meta.env.VITE_API_URL}/cars/${carId}`, {withCredentials: true})
         .then(() => {
           //filter out the cars that arent the one to be deleted and set them in state
           setCars((prevCars) => prevCars.filter(car => car._id !== carId));

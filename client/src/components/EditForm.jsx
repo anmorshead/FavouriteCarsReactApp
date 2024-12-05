@@ -26,7 +26,7 @@ export default function EditForm() {
   const updateFormData = (data) => {
     const carId = car._id; //get car ID from state
     axios
-      .put(`http://localhost:3002/api/cars/${carId}`, data, {withCredentials: true,})  // Update car details
+      .put(`${import.meta.env.VITE_API_URL}/cars/${carId}`, data, {withCredentials: true,})  // Update car details
       .then(() => {
         console.log("Car updated successfully!");
         navigate('/'); //navigate home

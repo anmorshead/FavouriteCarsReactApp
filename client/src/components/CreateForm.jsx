@@ -10,7 +10,7 @@ export default function CreateForm(){
 
     function receiveFormData(collectedData){
 
-        axios.post("http://localhost:3002/api/cars", collectedData, {withCredentials: true,})
+        axios.post(`${import.meta.env.VITE_API_URL}/cars`, collectedData, {withCredentials: true,})
             .then((response) => {
                 if (response.status === 201) {
                     console.log("Car Created:", response.data);
