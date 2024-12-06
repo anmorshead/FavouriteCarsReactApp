@@ -22,17 +22,28 @@ export default function CreateForm(){
             });
         }
 
+    const urlValidationRules = {
+      required: "Image is required",
+      pattern: {            
+        value: /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/,            
+        message: "Please enter a valid url",          
+      }
+    }
+
     return(
         <form className="form-signin" onSubmit={handleSubmit(receiveFormData)}>
             <h1 className="h3 mb-3 font-weight-normal text-center">Enter your favourite Car!</h1>
             <label htmlFor="manufacturer" className="sr-only">Make</label>
-            <input {...register("manufacturer") } id="manufacturer" className="form-control" placeholder="Make" autoFocus />
+            <input {...register("manufacturer", {required: "Make is required"}) } id="manufacturer" className="form-control" placeholder="Make" autoFocus />
+            {errors.manufacturer && <span className="text-danger small">{errors.manufacturer.message}</span>}
             <label htmlFor="model" className="sr-only">Model</label>
-            <input {...register("model") } id="model" className="form-control" placeholder="Model"/>
+            <input {...register("model", {required: "Model is required"}) } id="model" className="form-control" placeholder="Model"/>
+            {errors.model && <span className="text-danger small">{errors.model.message}</span>}
             <label htmlFor="image" className="sr-only">Image</label>
-            <input {...register("image") } id="image" className="form-control" placeholder="Link to Image" autoFocus />
-            <h5 className="m-3 font-weight-normal text-center">Extra Info if you know it...</h5>
+            <input {...register("image", urlValidationRules) } id="image" className="form-control" placeholder="Link to Image" autoFocus />
+            {errors.image && <span className="text-danger small">{errors.image.message}</span>}
 
+            <h5 className="m-3 font-weight-normal text-center">Extra Info if you know it...</h5>
             <label htmlFor="generation" className="sr-only">Generation</label>
             <input {...register("generation") } id="generation" className="form-control" placeholder="Generation"/>
             <label htmlFor="performance.horsepower" className="sr-only">Horsepower</label>

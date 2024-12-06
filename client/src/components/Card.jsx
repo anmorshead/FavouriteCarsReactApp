@@ -4,10 +4,22 @@ import { useNavigate } from 'react-router-dom';
 const Card = (props) => {
   const navigate = useNavigate();
 
-  const handleEdit = (car) => {
+  const handleEdit = () => {
+    const car = {
+      _id: props._id,
+      image: props.image,
+      model: props.model,
+      manufacturer: props.manufacturer,
+      generation: props.generation,
+      performance: {
+        horsepower: props.horsepower,
+        torque: props.torque,
+        engineType: props.engine,
+      },
+    };
     navigate('/edit', { state: { car } }); //need to pass state with location (can't pass with props)
   };
-
+  
 
   const handleDelete = () => {
     //confirm before deletion

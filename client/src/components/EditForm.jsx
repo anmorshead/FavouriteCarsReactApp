@@ -17,9 +17,10 @@ export default function EditForm() {
       setValue("manufacturer", passedCar.manufacturer);
       setValue("image", passedCar.image)
       setValue("generation", passedCar.generation);
-      setValue("performance.horsepower", passedCar.horsepower);
-      setValue("performance.torque", passedCar.torque);
-      setValue("performance.engineType", passedCar.engine);
+      setValue("performance.horsepower", passedCar.performance.horsepower);
+      setValue("performance.torque", passedCar.performance.torque);
+      setValue("performance.engineType", passedCar.performance.engineType);
+      
     }
   }, [location.state, setValue]); //dependencies
 
@@ -34,8 +35,14 @@ export default function EditForm() {
       .catch((error) => console.error("Error updating car:", error));
   };
 
-  if (!car) return <div>Loading...</div>; //loading state if car data is not yet loaded
-  //otherwise:
+  const urlValidationRules = {
+    required: "Image is required",
+    pattern: {            
+      value: /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/,            
+      message: "Please enter a valid url",          
+    }
+  }
+
   return (
     <div className="container mt-5">
       <h1>Edit Car</h1>
@@ -43,15 +50,18 @@ export default function EditForm() {
         <h1 className="h3 mb-3 font-weight-normal text-center">
           Edit Your Car Details
         </h1>
-
-        <label htmlFor="manufacturer" className="sr-only">Make</label>
-            <input {...register("manufacturer") } id="manufacturer" className="form-control" placeholder="Make" autoFocus />
+       
+            <label htmlFor="manufacturer" className="sr-only">Make</label>
+            <input {...register("manufacturer", {required: "Make is required"}) } id="manufacturer" className="form-control" placeholder="Make" autoFocus />
+            {errors.manufacturer && <span className="text-danger small">{errors.manufacturer.message}</span>}
             <label htmlFor="model" className="sr-only">Model</label>
-            <input {...register("model") } id="model" className="form-control" placeholder="Model"/>
+            <input {...register("model", {required: "Model is required"}) } id="model" className="form-control" placeholder="Model"/>
+            {errors.model && <span className="text-danger small">{errors.model.message}</span>}
             <label htmlFor="image" className="sr-only">Image</label>
-            <input {...register("image") } id="image" className="form-control" placeholder="Link to Image" autoFocus />
-            <h5 className="m-3 font-weight-normal text-center">Extra Info if you know it...</h5>
+            <input {...register("image", urlValidationRules) } id="image" className="form-control" placeholder="Link to Image" autoFocus />
+            {errors.image && <span className="text-danger small">{errors.image.message}</span>}
 
+            <h5 className="m-3 font-weight-normal text-center">Extra Info if you know it...</h5>
             <label htmlFor="generation" className="sr-only">Generation</label>
             <input {...register("generation") } id="generation" className="form-control" placeholder="Generation"/>
             <label htmlFor="performance.horsepower" className="sr-only">Horsepower</label>

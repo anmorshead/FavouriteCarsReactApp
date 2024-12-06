@@ -31,25 +31,15 @@ class authService {
         //make call to login API endpoint
         //send form data to login endpoint
         try {
+            //recevied 200 response form API
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, collectedData, {withCredentials: true})
-            switch(response.status){
-                case 200:{
-                    sessionStorage.setItem("isloggedIn", "true")
-                    sessionStorage.setItem("user", collectedData.email)
-                    callback(true)
-                    break;
-                }
-                case 401:{
-                    callback(false)
-                    break;
-                }
-                case 500:{
-                    callback(false)
-                    break;
-                }
-            }
+            sessionStorage.setItem("isloggedIn", "true")
+            sessionStorage.setItem("user", collectedData.email)
+            callback(true)
+
         } catch (err) {
-            console.log('invalid login')
+            //received something else
+            callback(false)
         }
 
     }
@@ -58,15 +48,13 @@ class authService {
         //delete token from cookies
         try{
             const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/logout`)
-            if(response.status === 204){
-                sessionStorage.removeItem("isLoggedIn")
-                sessionStorage.removeItem("user")
-                callback(true)
-            } else {
-                callback(false)
-            }
+            sessionStorage.removeItem("isLoggedIn")
+            sessionStorage.removeItem("user")
+            callback(true)
+           
         } catch (err) {
-            console.log('invalid login')
+            callback(false)
+            console.log('an error occurred')
         }
     }
 
