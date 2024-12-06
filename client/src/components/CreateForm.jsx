@@ -22,13 +22,6 @@ export default function CreateForm(){
             });
         }
 
-    const urlValidationRules = {
-      required: "Image is required",
-      pattern: {            
-        value: /^[\w-]+(\.[\w-]+)+([\/\w\-\.]*)*\/?$/,
-        message: "Please enter a valid url",          
-      }
-    }
 
     return(
         <form className="form-signin" onSubmit={handleSubmit(receiveFormData)}>
@@ -40,7 +33,7 @@ export default function CreateForm(){
             <input {...register("model", {required: "Model is required"}) } id="model" className="form-control" placeholder="Model"/>
             {errors.model && <span className="text-danger small">{errors.model.message}</span>}
             <label htmlFor="image" className="sr-only">Image</label>
-            <input {...register("image", urlValidationRules) } id="image" className="form-control" placeholder="Link to Image" autoFocus />
+            <input {...register("image", {required:"Image is required"}) } id="image" className="form-control" placeholder="Link to Image" autoFocus />
             {errors.image && <span className="text-danger small">{errors.image.message}</span>}
 
             <h5 className="m-3 font-weight-normal text-center">Extra Info if you know it...</h5>
