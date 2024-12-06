@@ -25,7 +25,7 @@ export default function CreateForm(){
     const urlValidationRules = {
       required: "Image is required",
       pattern: {            
-        value: /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/,            
+        value: /^[\w-]+(\.[\w-]+)+([\/\w\-\.]*)*\/?$/,
         message: "Please enter a valid url",          
       }
     }
